@@ -8,7 +8,7 @@ function FountainModel() {
 
 export default function FountainViewer() {
   return (
-    <Canvas camera={{ position: [10, 10, 10], fov: 45 }}>
+    <Canvas camera={{ position: [90, 90, 90], fov: 45 }}>
       <ambientLight intensity={0.6} />
       <directionalLight position={[10, 10, 5]} />
       <OrbitControls />
