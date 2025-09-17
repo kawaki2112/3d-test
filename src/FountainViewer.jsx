@@ -26,16 +26,17 @@ function SceneBackground() {
 export default function FountainViewer() {
   return (
     <Canvas 
-      camera={{ position: [90, 90, 90], fov: 45 }}
+      camera={{ position: [45, 30, 45], fov: 45 }} // Better angle
     >
       <SceneBackground />
       <ambientLight intensity={0.6} />
       <directionalLight position={[10, 10, 5]} />
       <OrbitControls 
-        maxPolarAngle={Math.PI * 0.75} // Prevents rotating too far down
-        minPolarAngle={Math.PI * 0.1}  // Prevents rotating too far up
+        maxPolarAngle={Math.PI * 0.6} // Prevents extreme downward rotation
+        minPolarAngle={Math.PI * 0.2}  // Prevents extreme upward rotation
         enableDamping={true}
         dampingFactor={0.05}
+        target={[0, 5, 0]} // Focus point slightly above ground
       />
       <FountainModel />
     </Canvas>
