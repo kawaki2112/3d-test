@@ -45,8 +45,8 @@ function MobileFPSControls({ bounds = 40, movement, touchRotation }) {
 
     const speed = 40; // Increased speed
 
-    if (movement.forward) velocity.current.z = -speed;
-    if (movement.backward) velocity.current.z = speed;
+    if (movement.forward) velocity.current.z = speed;
+    if (movement.backward) velocity.current.z = -speed;
     if (movement.left) velocity.current.x = -speed;
     if (movement.right) velocity.current.x = speed;
     if (movement.up) velocity.current.y = speed;
@@ -193,8 +193,8 @@ export default function FountainViewer() {
       const sensitivity = 0.005;
       
       setTouchRotation(prev => ({
-        x: Math.max(-Math.PI / 2, Math.min(Math.PI / 2, prev.x - deltaY * sensitivity)),
-        y: prev.y - deltaX * sensitivity
+        x: Math.max(-Math.PI / 2, Math.min(Math.PI / 2, prev.x - deltaY * sensitivity)), // Only Y rotation (up/down look)
+        y: prev.y - deltaX * sensitivity // Only X rotation (left/right look)
       }));
       
       lastTouch.current = { x: touch.clientX, y: touch.clientY };
