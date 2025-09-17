@@ -5,7 +5,7 @@ import * as THREE from 'three';
 
 function FountainModel() {
   const { scene } = useGLTF('/models/psg_fountain.glb');
-  return <primitive object={scene} scale={0.6} />;
+  return <primitive object={scene} scale={0.6} position={[0, 0, 0]} rotation={[0, 0, 0]} />;
 }
 
 function SceneBackground() {
